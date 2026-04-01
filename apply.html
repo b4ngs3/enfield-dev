@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply – Enfield Dev Ltd</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">Enfield<span>Dev</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="profiles.html">Our Team</a></li>
+      <li><a href="jobs.html">Jobs</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="apply.html" class="active">Apply Now</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <h1>Apply to Join Our Team</h1>
+    <p>Fill in the form below and we will be in touch within 5 working days to discuss your application.</p>
+  </div>
+
+  <section class="section section-alt">
+    <div class="form-container">
+
+      <form action="#" method="POST">
+
+        <h3 style="color: var(--navy); margin-bottom: 1.5rem; font-size: 1.1rem;">Personal Information</h3>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name <span>*</span></label>
+            <input type="text" id="firstName" name="firstName" placeholder="e.g. John" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name <span>*</span></label>
+            <input type="text" id="lastName" name="lastName" placeholder="e.g. Smith" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address <span>*</span></label>
+            <input type="email" id="email" name="email" placeholder="e.g. john@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number <span>*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g. 07700 900000" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" id="address" name="address" placeholder="e.g. 12 High Street, Enfield, EN1 1AA">
+        </div>
+
+        <hr style="border: none; border-top: 1px solid var(--light-grey); margin: 2rem 0;">
+
+        <h3 style="color: var(--navy); margin-bottom: 1.5rem; font-size: 1.1rem;">Application Details</h3>
+
+        <div class="form-group">
+          <label for="role">Role Applying For <span>*</span></label>
+          <select id="role" name="role" required>
+            <option value="" disabled selected>Select a role...</option>
+            <option value="junior-frontend">Junior Front-End Developer</option>
+            <option value="trainee-dev">Trainee Web Developer</option>
+            <option value="junior-fullstack">Junior Full-Stack Developer</option>
+            <option value="design-intern">Web Design Intern</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="qualification">Highest Qualification <span>*</span></label>
+          <select id="qualification" name="qualification" required>
+            <option value="" disabled selected>Select your qualification...</option>
+            <option value="gcse">GCSEs</option>
+            <option value="btec-l2">BTEC Level 2</option>
+            <option value="btec-l3">BTEC Level 3</option>
+            <option value="a-level">A Levels</option>
+            <option value="degree">University Degree</option>
+            <option value="bootcamp">Coding Bootcamp</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="experience">Years of Experience</label>
+          <select id="experience" name="experience">
+            <option value="0">No experience (just starting out)</option>
+            <option value="1">Less than 1 year</option>
+            <option value="2">1–2 years</option>
+            <option value="3">3–5 years</option>
+            <option value="4">5+ years</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="skills">Key Skills</label>
+          <input type="text" id="skills" name="skills" placeholder="e.g. HTML, CSS, JavaScript, Python">
+        </div>
+
+        <div class="form-group">
+          <label for="coverLetter">Cover Letter / Why do you want to join us? <span>*</span></label>
+          <textarea id="coverLetter" name="coverLetter" placeholder="Tell us a bit about yourself and why you want to work at Enfield Dev Ltd..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="portfolio">Portfolio or GitHub URL (optional)</label>
+          <input type="url" id="portfolio" name="portfolio" placeholder="e.g. https://github.com/yourname">
+        </div>
+
+        <div class="form-group">
+          <label>
+            <input type="checkbox" name="consent" required style="width: auto; margin-right: 8px;">
+            I confirm that the information I have provided is accurate and I agree to Enfield Dev Ltd storing my data for recruitment purposes. <span>*</span>
+          </label>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary" style="color: var(--navy);">Submit Application</button>
+        </div>
+
+      </form>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Enfield<span>Dev</span> Ltd</h3>
+        <p>A leading web development company based in Enfield, London. Building digital experiences that make a difference since 2012.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="profiles.html">Our Team</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="apply.html">Apply Now</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>📍 Enfield, London</li>
+          <li>📧 jobs@enfielddev.co.uk</li>
+          <li>📞 020 1234 5678</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Enfield Dev Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
