@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Team – Enfield Dev Ltd</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .profile-photo {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .profile-card { cursor: pointer; overflow: hidden; }
+    .profile-card:hover .profile-photo { transform: scale(1.05); }
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-box {
+      background: #fff;
+      border-radius: 16px;
+      max-width: 420px;
+      width: 90%;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      animation: popIn 0.3s ease;
+    }
+    @keyframes popIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to   { transform: scale(1);   opacity: 1; }
+    }
+    .modal-photo {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+    .modal-body { padding: 1.5rem; }
+    .modal-body h2 { color: #0d2b5e; font-size: 1.3rem; margin-bottom: 0.3rem; }
+    .modal-role { color: #2d72d9; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.8rem; }
+    .modal-body p { color: #5a6a85; font-size: 0.92rem; line-height: 1.6; margin-bottom: 1rem; }
+    .modal-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.2rem; }
+    .modal-tags span { background: #e8eef7; color: #1a4fa0; font-size: 0.78rem; font-weight: 600; padding: 4px 12px; border-radius: 20px; }
+    .modal-close { width: 100%; padding: 12px; background: #0d2b5e; color: #fff; border: none; border-radius: 8px; font-size: 0.95rem; font-weight: 600; cursor: pointer; }
+    .modal-close:hover { background: #1a4fa0; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">Enfield<span>Dev</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="profiles.html" class="active">Our Team</a></li>
+      <li><a href="jobs.html">Jobs</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="apply.html">Apply Now</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <h1>Meet Our Trainee Developers</h1>
+    <p>Get to know the talented people who have recently joined our team. Click on any card to find out more!</p>
+  </div>
+
+  <section class="section">
+    <div class="profile-grid">
+
+      <div class="profile-card" onclick="openModal('kingsford')">
+        <img src="kingsford.jpeg" alt="Kingsford Amoateng" class="profile-photo">
+        <div class="profile-info">
+          <h3>Kingsford Amoateng</h3>
+          <p class="profile-role">Junior Front-End Developer</p>
+          <p>Kingsford joined Enfield Dev after completing a Level 3 IT qualification. He specialises in HTML, CSS and JavaScript.</p>
+          <div class="profile-tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-card" onclick="openModal('josias')">
+        <img src="josias.jpeg" alt="Josias Nsuki" class="profile-photo">
+        <div class="profile-info">
+          <h3>Josias Nsuki</h3>
+          <p class="profile-role">Junior Full-Stack Developer</p>
+          <p>Josias came through our graduate programme after studying Computer Science. He has a passion for building responsive web apps.</p>
+          <div class="profile-tags">
+            <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">CSS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-card" onclick="openModal('mahmood')">
+        <img src="mahmood.jpeg" alt="Mahmood Rizk" class="profile-photo">
+        <div class="profile-info">
+          <h3>Mahmood Rizk</h3>
+          <p class="profile-role">Trainee Web Designer</p>
+          <p>Mahmood discovered his love for web design through self-teaching. He has already made a big impact on our design workflow.</p>
+          <div class="profile-tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Figma</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-card" onclick="openModal('abdiqeer')">
+        <img src="abdiqeer.jpeg" alt="Abdiqeer Hassan" class="profile-photo">
+        <div class="profile-info">
+          <h3>Abdiqeer Hassan</h3>
+          <p class="profile-role">Junior Back-End Developer</p>
+          <p>Abdiqeer completed a coding bootcamp before joining us. He works on server-side development and is becoming a key team member.</p>
+          <div class="profile-tags">
+            <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">PHP</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-card" onclick="openModal('micheal')">
+        <img src="micheal.jpeg" alt="Micheal Antoniou" class="profile-photo">
+        <div class="profile-info">
+          <h3>Micheal Antoniou</h3>
+          <p class="profile-role">Trainee Web Developer</p>
+          <p>Micheal joined from his BTEC Level 3 and has been with us three months. He is enthusiastic and already producing quality code.</p>
+          <div class="profile-tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Git</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-card" onclick="openModal('mohammed')">
+        <img src="mohammed.jpeg" alt="Mohammed Islam" class="profile-photo">
+        <div class="profile-info">
+          <h3>Mohammed Islam</h3>
+          <p class="profile-role">Junior UI Developer</p>
+          <p>Mohammed has a graphic design background combined with web skills. He brings a unique creative perspective to every project.</p>
+          <div class="profile-tags">
+            <span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">UI Design</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal" onclick="closeModalOutside(event)">
+    <div class="modal-box">
+      <img id="modal-photo" src="" alt="" class="modal-photo">
+      <div class="modal-body">
+        <h2 id="modal-name"></h2>
+        <p class="modal-role" id="modal-role"></p>
+        <p id="modal-bio"></p>
+        <div class="modal-tags" id="modal-tags"></div>
+        <button class="modal-close" onclick="closeModal()">Close ✕</button>
+      </div>
+    </div>
+  </div>
+
+  <section class="section section-alt" style="text-align: center;">
+    <h2 style="color: var(--navy); margin-bottom: 1rem;">Could You Be Next?</h2>
+    <p style="color: var(--text-grey); max-width: 500px; margin: 0 auto 2rem;">We are always looking for motivated individuals to join our team. If you have a passion for web development, we want to hear from you.</p>
+    <a href="apply.html" class="btn btn-blue">Apply Now</a>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>Enfield<span>Dev</span> Ltd</h3>
+        <p>A leading web development company based in Enfield, London. Building digital experiences that make a difference since 2012.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="profiles.html">Our Team</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="apply.html">Apply Now</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>📍 Enfield, London</li>
+          <li>📧 jobs@enfielddev.co.uk</li>
+          <li>📞 020 1234 5678</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Enfield Dev Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const profiles = {
+      kingsford: { name:'Kingsford Amoateng', role:'Junior Front-End Developer', photo:'kingsford.jpeg', bio:'Kingsford joined Enfield Dev after completing a Level 3 IT qualification at college. He specialises in HTML, CSS and JavaScript and has already contributed to three client projects. He is passionate about building clean, accessible websites and is always looking to learn new skills.', tags:['HTML','CSS','JavaScript'] },
+      josias:    { name:'Josias Nsuki', role:'Junior Full-Stack Developer', photo:'josias.jpeg', bio:'Josias came to us through our graduate programme after studying Computer Science at university. He has a strong passion for building responsive and accessible web applications and works across both front-end and back-end technologies.', tags:['React','Node.js','CSS'] },
+      mahmood:   { name:'Mahmood Rizk', role:'Trainee Web Designer', photo:'mahmood.jpeg', bio:'Mahmood discovered his love for web design through self-teaching and online courses. He joined the team six months ago and has already made a big impact on our design workflow. He has a keen eye for detail and a strong sense of visual style.', tags:['HTML','CSS','Figma'] },
+      abdiqeer:  { name:'Abdiqeer Hassan', role:'Junior Back-End Developer', photo:'abdiqeer.jpeg', bio:'Abdiqeer completed a coding bootcamp before joining Enfield Dev. He works primarily on server-side development and database management and is quickly becoming a key team member. He is known for his problem-solving skills and calm approach.', tags:['Python','SQL','PHP'] },
+      micheal:   { name:'Micheal Antoniou', role:'Trainee Web Developer', photo:'micheal.jpeg', bio:'Micheal joined straight from his BTEC Level 3 qualification and has been with us for three months. He is enthusiastic, hardworking and already producing quality code on live projects. He is quickly developing his skills in both HTML and CSS.', tags:['HTML','CSS','Git'] },
+      mohammed:  { name:'Mohammed Islam', role:'Junior UI Developer', photo:'mohammed.jpeg', bio:'Mohammed has a background in graphic design which he combined with web development skills. He brings a unique creative perspective to every project and has a great eye for detail. He is particularly skilled in creating visually engaging user interfaces.', tags:['CSS','JavaScript','UI Design'] }
+    };
+
+    function openModal(id) {
+      const p = profiles[id];
+      document.getElementById('modal-photo').src = p.photo;
+      document.getElementById('modal-photo').alt = p.name;
+      document.getElementById('modal-name').textContent = p.name;
+      document.getElementById('modal-role').textContent = p.role;
+      document.getElementById('modal-bio').textContent = p.bio;
+      document.getElementById('modal-tags').innerHTML = p.tags.map(t => `<span>${t}</span>`).join('');
+      document.getElementById('modal').classList.add('active');
+    }
+    function closeModal() { document.getElementById('modal').classList.remove('active'); }
+    function closeModalOutside(e) { if (e.target.id === 'modal') closeModal(); }
+  </script>
+
+</body>
+</html>
